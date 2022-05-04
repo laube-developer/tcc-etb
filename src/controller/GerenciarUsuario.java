@@ -50,7 +50,7 @@ public class GerenciarUsuario extends HttpServlet {
 					
 				}else {
 					mensagem = 
-						"O usuário nãp foi encontrado na base de dados!";
+						"O usuÃ¡rio nÃ£p foi encontrado na base de dados!";
 				}
 			}
 			
@@ -58,10 +58,10 @@ public class GerenciarUsuario extends HttpServlet {
 			if(acao.equals("desativar")) {
 				u.setIdUsuario(Integer.parseInt(idUsuario));
 				if(udao.desativar(u)) {
-					mensagem = "Usuário desativado com sucesso!";
+					mensagem = "UsuÃ¡rio desativado com sucesso!";
 					
 				}else {
-					mensagem = "Falha ao desativar o usuário!";
+					mensagem = "Falha ao desativar o usuÃ¡rio!";
 				}
 				
 				
@@ -70,9 +70,9 @@ public class GerenciarUsuario extends HttpServlet {
 			if(acao.equals("ativar")) {
 				u.setIdUsuario(Integer.parseInt(idUsuario));
 				if(udao.ativar(u)) {
-					mensagem = "Usuário ativado com sucesso!";
+					mensagem = "UsuÃ¡rio ativado com sucesso!";
 				}else {
-					mensagem = "Falha ao ativar o usuário";
+					mensagem = "Falha ao ativar o usuÃ¡rio";
 				}
 			}
 			
@@ -111,42 +111,42 @@ public class GerenciarUsuario extends HttpServlet {
 		}
 		
 		if(nome.equals("") || nome.isEmpty()) {
-			mensagem = "Informe o nome do usuário!";
+			mensagem = "Informe o nome do usuÃ¡rio!";
 		}else {
 			u.setNome(nome);
 		}
 		
 		if(login.equals("") || login.isEmpty()) {
-			mensagem = "Informe o nome login do usuário!";
+			mensagem = "Informe o nome login do usuÃ¡rio!";
 		}else {
 			u.setLogin(login);
 		}
 		
 		if(senha.equals("") || senha.isEmpty()) {
-			mensagem = "Informe a senha do usuário!";
+			mensagem = "Informe a senha do usuÃ¡rio!";
 		}else {
 			u.setSenha(senha);
 		}
 
 		
 		if(status.equals("") || status.isEmpty()){
-			mensagem = "Informe o status do usuário!";
+			mensagem = "Informe o status do usuÃ¡rio!";
 		}else {
 			u.setStatus(Integer.parseInt(status));
 		}
 		
 		Perfil p = new Perfil();
 		p.setIdPerfil(Integer.parseInt(idPerfil));
-		u.setIdPerfil(p);
+		u.setIdPerfil(p.getIdPerfil());
 		
 		UsuarioDAO udao = new UsuarioDAO();
 		try {
 			if(udao.gravar(u)) {
 				mensagem = 
-					"Usuário gravado com sucesso na base de dados!";
+					"UsuÃ¡rio gravado com sucesso na base de dados!";
 			}else {
 				mensagem = 
-					"Falha ao gravar o usuário na base de dados!";
+					"Falha ao gravar o usuÃ¡rio na base de dados!";
 			}
 		
 		} catch (SQLException e) {
