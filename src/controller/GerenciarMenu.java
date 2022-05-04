@@ -91,7 +91,7 @@ public class GerenciarMenu extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String link = request.getParameter("link");
 		String icone = request.getParameter("icone");
-		String exibir = request.getParameter("exibir");
+		String status = request.getParameter("status");
 		String mensagem = "";
 		
 		Menu m = new Menu();
@@ -117,7 +117,7 @@ public class GerenciarMenu extends HttpServlet {
 		if(exibir.equals("") || exibir.isEmpty()) {
 			mensagem = "Informe o valor do campo exibir!";
 		}else {
-			m.setExibir(Integer.parseInt(exibir));
+			m.setStatus(Integer.parseInt(status));
 		}
 		
 		m.setIcone(icone);
