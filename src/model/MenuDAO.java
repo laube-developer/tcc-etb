@@ -30,7 +30,7 @@ public class MenuDAO {
 			m.setNome(rs.getString("nome"));
 			m.setLink(rs.getString("link"));
 			m.setIcone(rs.getString("icone"));
-			m.setExibir(rs.getInt("exibir"));
+			m.setStatus(rs.getInt("status"));
 			
 			menus.add(m);
 		}
@@ -54,7 +54,7 @@ public class MenuDAO {
 			ps.setString(1, m.getNome());
 			ps.setString(2, m.getLink());
 			ps.setString(3, m.getIcone());
-			ps.setInt(4, m.getExibir());
+			ps.setInt(4, m.getStatus());
 			
 			
 		}else {
@@ -65,7 +65,7 @@ public class MenuDAO {
 			ps.setString(1, m.getNome());
 			ps.setString(2, m.getLink());
 			ps.setString(3, m.getIcone());
-			ps.setInt(4, m.getExibir());
+			ps.setInt(4, m.getStatus());
 			ps.setInt(5, m.getIdMenu());
 			
 			
@@ -93,7 +93,7 @@ public class MenuDAO {
 			m.setNome(rs.getString("nome"));
 			m.setLink(rs.getString("link"));
 			m.setIcone(rs.getString("icone"));
-			m.setExibir(rs.getInt("exibir"));
+			m.setStatus(rs.getInt("status"));
 		}
 		
 		ConexaoFactory.close(con);
